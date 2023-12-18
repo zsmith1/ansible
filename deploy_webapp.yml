@@ -1,0 +1,4 @@
+- hosts: localhost
+  name: "Deploy Web Application"
+  roles:
+    - deploy_webapp

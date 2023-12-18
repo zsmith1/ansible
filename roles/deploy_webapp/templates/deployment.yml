@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: webapp
+   namespace: webapp
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: web
+   template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: webapp
+          image: zsmith2171/webapp:latest
+          imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+        - name: regcred
